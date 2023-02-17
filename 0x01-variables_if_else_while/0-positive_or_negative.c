@@ -16,7 +16,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 {
-	printf("%d is.\n", n);
+	printf("%d is\n", n);
 }
 	if (n == 0)
 {
