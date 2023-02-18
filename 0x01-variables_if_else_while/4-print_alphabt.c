@@ -10,25 +10,15 @@
 
 int main(void)
 {
-	char ch;
-	char chA;
+	char c = 'a';
 
-	for (ch = 'a'; ch <= 'z'; ch++)
-{
-	putchar(ch);
-	if (ch == 'd')
-		break;
-}
-	for (chA = 'f'; chA <= 'z'; chA++)
-{
-	putchar(chA);
-	if (chA == 'p')
-		break;
-}
-	for (chA = 'r'; chA <= 'z'; chA++)
-{
-	putchar(chA);
-}
+	while (c <= 'z')
+	{
+		if (!(c == 'e' || c == 'q'))
+			putchar(c);
+		c++;
+	}
 	putchar('\n');
+
 	return (0);
 }
