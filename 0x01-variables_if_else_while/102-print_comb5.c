@@ -1,11 +1,7 @@
 #include <stdio.h>
-/*
- *  prints all possible combinations of two two-digit numbers
- */
-
 /**
  * main - entry point
- * 
+ *
  * Return: int 0
  */
 int main(void)
@@ -46,5 +42,6 @@ int main(void)
 		}
 		a++;
 	}
+	putchar('\n');
 	return (0);
 }
