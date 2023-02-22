@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * format_number - prints number with appropriate syntax
- * @p: first digit input to format_number
- * @c: second digit input; checks for end of line
+ * print_times_table - prints number with appropriate syntax
+ * @n: take input
  * Return: void
  */
 
