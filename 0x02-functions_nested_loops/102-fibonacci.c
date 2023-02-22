@@ -26,3 +26,4 @@ int main(void)
 	}
 	printf("%ld\n", a + b);
 	return (0);
+}
