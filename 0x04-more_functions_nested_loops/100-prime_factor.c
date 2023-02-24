@@ -18,7 +18,7 @@ int main(void)
 		}
 		c++;
 	}
-	printf("%li\i", i);
+	printf("%li\n", i);
 
 	return (0);
 }
