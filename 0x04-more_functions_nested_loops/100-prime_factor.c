@@ -1,3 +1,4 @@
+inclue "stdio.h"
 /**
  * main - get biggest prime factor of given a number
  * Return: 0
