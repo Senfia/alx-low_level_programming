@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ * printc - print int c a amount of times
+ * @a: amount times to print c must greater than 0
+ * @c: character to print
+ * Return: nothing
+ */
+
+void printc(int a, int c)
+{
+	while (a > 0)
+	{
+		_putchar(c);
+		a--;
+	}
+}
+
+/**
  * print_triangle - print a triangl, ascii art
  * @size: size
  * Return: nothing
