@@ -8,7 +8,7 @@ int main(void)
 
 	i = 612852475143;
 	c = 2;
-	while (d < i)
+	while (c < i)
 	{
 		if ((i % c) == 0)
 		{
