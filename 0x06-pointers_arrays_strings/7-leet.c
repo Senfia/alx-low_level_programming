@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *leet - encodes a string into 1337.
- *@chr: string to be encoded.
- *Return: pointer to chr.
+ *leet - encodes a string
+ *@chr: string to be encoded
+ *Return: pointer to chr
  */
 
 char *leet(char *chr)
