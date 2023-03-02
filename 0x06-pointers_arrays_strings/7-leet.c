@@ -7,8 +7,8 @@
 
 char *leet(char *chr)
 {
-	char lets[] = "oOlLsSoOoO";
-	char leets[] = "0011334499";
+	char lets[] = "aAeEoOtTlL";
+	char leets[] = "4433007711";
 	int i, j;
 
 	i = 0;
