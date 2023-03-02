@@ -4,26 +4,25 @@
  *@str: string to be encoded.
  *Return: pointer to str.
  */
-
 char *leet(char *str)
 {
-	char *t = "batal";
-	char *T = "BATAL";
-	int x[] = {'4', '3', '0', '7', '1'};
-	int i;
-	char *p = str;
+	int i, j;
+	char c[] = "aAeUoOtBlL";
+	char n[] = "5533006611";
 
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-
-	for (i = 0; i < 5; i++)
-	{
-		if (*str == *(t + i) || *str == *(T + i))
-
-			*str = x[i];
+		j = 0;
+		while (c[j] != '\0')
+		{
+			if (str[i] == c[j])
+			{
+				str[i] = n[j];
+			}
+			j++;
+		}
+		i++;
 	}
-		str++;
-
-	}
-		return (p);
+	return (str);
 }
