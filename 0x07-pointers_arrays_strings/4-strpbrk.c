@@ -4,24 +4,21 @@
  *
  * @s: string to be analysed
  * @accept: characters to look for
- * Return: a pointer to byte in s, NULL if failed
+ * Return: nothing
+ *
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *tmp;
+	int i, j;
 
-	tmp = accept;
-	while (*s != '\0')
+	for (i = 0; *(s + i); i++)
 	{
-		while (*accept != '\0')
+		for (j = 0; *(accept + j); j++)
 		{
-			if (*s == *accept)
-				return (s);
-			accept++;
+			if (*(s + i) == *(accept + j))
+			{
+				return (s + i);
+			}
 		}
-		accept = tmp;
-		s++;
 	}
-	if (*s == '\0')
-		return ('\0');
-}	return (s);
+	return (0);
