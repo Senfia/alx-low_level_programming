@@ -1,6 +1,6 @@
-#ifndef ABS_H
-#define ABS_H
+#ifndef ABS
+#define ABS
 
-#define ABS(X) ((X < 0) ? (-X) : (X))
+#define ABS(x) ((x) < 0 ? ((x) * (-1)) : (x))
 
 #endif
