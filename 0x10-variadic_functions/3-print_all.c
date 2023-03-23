@@ -4,9 +4,9 @@
 
 /**
 * printC_I - prints a char or an int
-* @b: format specifier for printf
+* @b: printf format specifier
 * @param: arguement to be printed
-* Return: nothing, but print a char or an int
+* Return: nothing, print char or an int
 **/
 void printC_I(char *b, va_list param)
 {
