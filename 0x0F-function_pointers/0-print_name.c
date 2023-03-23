@@ -1,4 +1,5 @@
 #include <function_pinters.h>
+#include <stdlib.h>
 /**
  * print_name - prints a name
  * @name: name of the person
