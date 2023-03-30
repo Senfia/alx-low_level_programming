@@ -7,16 +7,17 @@
 * @h: pointer to type list_t
 * Return: number of nodes in list
 **/
+
 size_t print_list(const list_t *h)
 {
-	size_t nodes = 0;
+	size_t count;
 
-	while (h)
+	count = 0;
+	while (h != NULL)
 	{
-		nodes++;
-		printf("[%u] %s\n",h->len, h->str);
+		printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
+		count++;
 	}
-
-	return (nodes);
+	return (count);
 }
