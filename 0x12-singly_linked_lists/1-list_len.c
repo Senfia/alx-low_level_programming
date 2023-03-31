@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
-* list_len - function that returns the number of elements in list_t
-* @h: pointer to of type list_t
-* Return: number of nodes in the list
+* list_len - returns the number of elements in list_t
+* @h: pointer to type list_t
+* Return: number of nodes in list
 **/
 size_t list_len(const list_t *h)
 {
