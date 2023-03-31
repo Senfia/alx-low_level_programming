@@ -1,3 +1,4 @@
+; assemble: assemble language program to print Hello, Holberton
 global main
 extern printf
 
