@@ -4,19 +4,22 @@
 #include <string.h>
 /**
 * free_list - function that free a list_t list.
-* @head: pointer to the list_t list
-* Return: nothing
+* @head: pointer to list_t
+* Return: 0
 **/
 void free_list(list_t *head)
 {
-	list_t *tmp;
+	list_t *tp;
 
-	while (head != NULL)
+	if (head == NULL)
+		return;
+	while (head->next != NULL)
 	{
-		tmp = head;
-		head = head->next;
-		free(tmp->str);
-		free(tmp);
+		tp = head->next;
+		free(head->str);
+		free(head);
+		head = tp;
 	}
-	head = NULL;
+	free(head->str);
+	free(head);
 }
