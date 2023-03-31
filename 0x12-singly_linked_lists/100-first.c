@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-void printStatement(void) __attribute__ ((constructor));
+void printFunc(void) __attribute__ ((constructor));
 
 /**
- * printStatement - Print out a statment, before main function
+ * printFunc - Prints out strings, before main function
  */
-void printStatement(void)
+void printFunc(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
