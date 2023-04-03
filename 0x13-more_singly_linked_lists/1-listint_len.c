@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-* list_len - returns number of elements in list_t
+* listint_len - returns number of elements in list_t
 * @h: pointer to type list_t
 * Return: number of nodes
 **/
