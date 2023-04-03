@@ -13,7 +13,7 @@ int pop_listint(listint_t **head)
 	if (*head == NULL)
 		return (0);
 	current = *head;
-	n = temp->n;
+	n = current->n;
 	*head = (*(*head)).next;
 	free(current);
 
