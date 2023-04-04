@@ -32,4 +32,13 @@ size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 
+typedef struct address_list
+{
+	void *address;
+	struct address_list *next;
+} address_list;
+
+address_list *add_node(address_list **head, void *address);
+void free_address_list(address_list *h);
+
 #endif
