@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
 #include "main.h"
 
 /**
@@ -13,43 +12,37 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int file;
 	char *buff;
-	ssize_t total_chars, nread, n;
+	ssize_t total_chars = 0, nread, n, nwrite;
 
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	file = open(filename, O_RDONLY);
+	if (file < 0)
 		return (0);
 
-
-	buff = (char *) malloc(1024);
-	if (!buff)
+	buff = malloc(1024);
+	if (buff == NULL)
 		return (0);
 
-	total_chars = 0;
-
-	for (n = 0; (nread = read(fd, buff, 1024)) >
-0 && (size_t) total_chars < letters; ++n)
+	for (n = 0; (nread = read(file, buff, 1024)) >
+			0 && (size_t)total_chars < letters; ++n)
 	{
-		ssize_t nwrite = write(STDOUT_FILENO, buff, (size_t) nread);
-
-		if (nwrite < 0 || (size_t) nwrite != (size_t) nread)
+		nwrite = write(STDOUT_FILENO, buff, (size_t)nread);
+		if (nwrite < 0 || (size_t)nwrite != (size_t)nread)
 		{
-		free(buff);
-			close(fd);
-		return (0);
+			free(buff);
+			close(file);
+			return (0);
 		}
 		total_chars += nread;
-		if ((size_t) total_chars >= letters)
-		{
+		if ((size_t)total_chars >= letters)
 			break;
-		}
 	}
 
 	free(buff);
-	close(fd);
+	close(file);
 	return (total_chars);
 }
