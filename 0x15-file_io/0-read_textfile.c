@@ -23,11 +23,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file < 0)
 		return (0);
 
-	buff = malloc(1024);
+	buff = malloc(sizeof(char) * letters);
 	if (buff == NULL)
 		return (0);
 
-	for (n = 0; (nread = read(file, buff, 1024)) >
+	for (n = 0; (nread = read(file, buff, letters)) >
 			0 && (size_t)total_chars < letters; ++n)
 	{
 		nwrite = write(STDOUT_FILENO, buff, (size_t)nread);
