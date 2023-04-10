@@ -18,16 +18,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t total_chars, nread, n;
 
 	if (!filename)
-		exit(EXIT_FAILURE);
+		return (0);
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit(EXIT_FAILURE);
+		return (0);
 
 
 	buff = (char *) malloc(1024);
 	if (!buff)
-		exit(EXIT_FAILURE);
+		return (0);
 
 	total_chars = 0;
 
@@ -40,7 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		{
 		free(buff);
 			close(fd);
-		exit(EXIT_FAILURE);
+		return (0);
 		}
 		total_chars += nread;
 		if ((size_t) total_chars >= letters)
