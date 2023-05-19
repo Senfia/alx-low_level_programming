@@ -1,53 +1,54 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_idx - Inserts a node at a specific index
- * in a doubly linked list.
+ * insert_dnodeint_at_index - Inserts a new node at the given
+ * index in the doubly linked list.
  * @head: Pointer to a pointer to the head of the list.
- * @idx: Index at which to insert the node.
- * @n: Value to insert.
+ * @idx: Index to add the new node at, starting from 0.
+ * @n: Value of the new node.
  * Return: Address of the new node or NULL if insertion is not possible.
  */
-dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
+			unsigned int idx, int n)
 {
-	unsigned int i;
-	dlistint_t *newNode, *currentNode;
+	unsigned int count;
+	dlistint_t *newNode, *current = *head;
 
-	if (!head || (idx > 0 && *head == NULL))
+	if (head == NULL)
 		return (NULL);
-
-	i = 0;
-	currentNode = *head;
-
-	if (idx > 0)
-	{
-		for (i = 0; i < (idx - 1) && currentNode != NULL; i++)
-		{
-		currentNode = currentNode->next;
-		}
-		if (i < (idx - 1))
-		return (NULL);
-	}
 
 	newNode = malloc(sizeof(dlistint_t));
-	if (!newNode)
+	if (newNode == NULL)
 		return (NULL);
+
 	newNode->n = n;
+	newNode->prev = newNode->next = NULL;
 
 	if (idx == 0)
 	{
-		newNode->prev = NULL;
-		newNode->next = currentNode;
-		if (currentNode)
-			currentNode->prev = newNode;
+		newNode->next = *head;
+		if (*head)
+			(*head)->prev = newNode;
 		*head = newNode;
-			return (newNode);
+		return (newNode);
+	}
+	count = 0;
+	while (count < (idx - 1) && current != NULL)
+	{
+		current = current->next;
+		count++;
+	}
+	if (current == NULL)
+	{
+		free(newNode);
+		return (NULL);
 	}
 
-	newNode->prev = currentNode;
-	if (currentNode->next)
-		(currentNode->next)->prev = newNode;
-	newNode->next = currentNode->next;
-	currentNode->next = newNode;
+	newNode->next = current->next;
+	if (current->next)
+		current->next->prev = newNode;
+	current->next = newNode;
+	newNode->prev = current;
+
 	return (newNode);
 }
