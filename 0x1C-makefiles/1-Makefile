@@ -1,9 +1,7 @@
 # Add variables
 
 # compiler to use
-CC = gcc-4.8
-
-# list of source files
+CC = gcc
 SRC = main.c school.c
 
 all:
