@@ -1,9 +1,8 @@
 #include "search_algos.h"
 
-
 /**
  * print_array - print part of an array
- * @array: array
+ * @array: array to be
  * @low: minimum index to print
  * @high: maximum index to print
  */
@@ -21,7 +20,7 @@ void print_array(int *array, size_t low, size_t high)
 
 
 /**
- * binary_search - searches for a value in a sorted 
+ * binary_search - searches for a value in a sorted
  * array of integers using the Binary search algorithm
  * @array: pointer to the first element of the array to search in
  * @size: is the number of elements in array
@@ -37,7 +36,7 @@ int binary_search(int *array, size_t size, int value)
 
 	low = 0;
 	high = size - 1;
-	whighle (low <= high)
+	while (low <= high)
 	{
 		print_array(array, low, high);
 		middle = low + (high - low) / 2;
